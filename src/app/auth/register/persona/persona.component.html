@@ -1,0 +1,54 @@
+<main class="container-form-register">
+  <form [formGroup]="formPersona" class="container-form">
+
+      <div class="form-input" >
+        <mat-form-field  appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input formControlName="nome" required matInput>
+        </mat-form-field>
+      </div>
+
+      <div class="form-input" >
+        <mat-form-field  appearance="fill">
+          <mat-label>Sobrenome</mat-label>
+          <input formControlName="sobrenome" required matInput>
+        </mat-form-field>
+      </div>
+
+      <div class="form-input" >
+        <mat-form-field  appearance="fill">
+          <mat-label>CPF</mat-label>
+          <input mask="000.000.000-00" formControlName="cpf"  required matInput >
+        </mat-form-field>
+      </div>
+
+      <div class="form-input" >
+        <mat-form-field  appearance="fill">
+          <mat-label>Data de Nascimento</mat-label>
+          <input mask="00/00/0000" matInput formControlName="nascimento" required matInput>
+        </mat-form-field>
+      </div>
+
+      <div class="form-input" >
+        <mat-form-field  appearance="fill">
+          <mat-label>Gênero</mat-label>
+          <mat-select formControlName="genero" required>
+            <mat-option value="one">Masculino</mat-option>
+            <mat-option value="two">Feminino</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-input" >
+        <mat-form-field  appearance="fill">
+          <mat-label>Turma</mat-label>
+          <mat-select formControlName="turma" required>
+            <mat-option value="one">BackEnd</mat-option>
+            <mat-option value="two">FrontEnd</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+  </form>
+  <button class="button" (click)="formPersonaEmitter()" mat-raised-button color="primary" [disabled]="!formPersona.valid">Próximo</button>
+</main>

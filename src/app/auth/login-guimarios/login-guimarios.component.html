@@ -1,0 +1,39 @@
+<main class="container-login" >
+
+  <div class="login-screen">
+
+    <div class="logo">
+      <img src="../../../assets/images/logo.png" alt="Logo">
+      <h1>Guimarios</h1>
+    </div>
+
+    <form [formGroup]="loginForm" class="login-form" >
+
+      <mat-form-field class="container-input" appearance="fill">
+        <mat-label>Endereço de Email</mat-label>
+        <input formControlName="email" type="email" matInput placeholder="example@email.com">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input formControlName="senha" matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <section class="check">
+        <mat-checkbox class="example-margin">Manter-me Conectado</mat-checkbox>
+      </section>
+
+
+      <div class="end-screen">
+        <button (click)="onSubmitLogin()" class="button" mat-button>Entrar</button>
+        <a href="#">Esqueceu a senha?</a>
+        <p>Não tem uma conta? Cadastre-se <a href="#">aqui</a></p>
+      </div>
+
+    </form>
+
+
+  </div>
+</main>

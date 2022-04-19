@@ -1,0 +1,40 @@
+<section class="everything">
+  <div class="container-form-personalData">
+
+    <header class="header-register">
+
+      <div class="above">
+        <img src="../../../assets/images/logo.png" alt="Logo">
+        <h1>Guimarios</h1>
+      </div>
+
+      <div class="title-form">
+        <h1 *ngIf="viewRegister.persona">Dados Pessoais</h1>
+        <h1 *ngIf="viewRegister.address">Endereço</h1>
+        <h1 *ngIf="viewRegister.end" >Finalizar</h1>
+      </div>
+
+      <div class="icons-form">
+        <ul>
+          <li (click)="persona()" class="bi bi-person-circle"></li>
+          <div class="line"></div>
+          <li (click)="address()" class="bi bi-house"></li>
+          <div class="line"></div>
+          <li (click)="end()" class="bi bi-check-circle-fill"></li>
+        </ul>
+      </div>
+
+    </header>
+    
+    <main  >
+
+      <ng-container *ngIf="viewRegister.persona"><app-persona (formEmitterPersona)="setPersona($event)"></app-persona></ng-container>
+      <ng-container *ngIf="viewRegister.address"><app-address (formEmitterAddress)="setAddress($event)"></app-address></ng-container>
+      <ng-container *ngIf="viewRegister.end"><app-end (formEmitterEnd)="setEnd($event)"></app-end></ng-container>
+
+    </main>
+
+    </div>
+</section>
+
+

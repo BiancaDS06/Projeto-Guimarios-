@@ -1,0 +1,33 @@
+<main class="container-form-register">
+  <form [formGroup]="formEnd" class="container-form ">
+
+      <div class="form-register" >
+        <mat-form-field  appearance="fill">
+          <mat-label>E-mail</mat-label>
+          <input formControlName="email" matInput>
+        </mat-form-field>
+      </div>
+
+      <div class="form-register" >
+        <mat-form-field  appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input formControlName="senha" matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <div class="form-register" >
+        <mat-form-field  appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input formControlName="repeteSenha" matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+  </form>
+  <button (click)="formEndEmitter()" class="button" mat-raised-button color="primary">Finalizar</button>
+</main>
